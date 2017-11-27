@@ -6,11 +6,11 @@ large_numbers = [
 ]
 
 def add_up(numbers)
-  numbers.map{ |number| number.to_i }.reduce{|a, b| a + b }
+  numbers.map{ |number| number.to_i }.reduce{ |a, b| a + b }
 end
 
 def subtract(numbers)
-  numbers.map{ |number| number.to_i }.reduce{|a, b| a - b }
+  numbers.map{ |number| number.to_i }.reduce{ |a, b| a - b }
 end
 
 puts add_up(large_numbers)
