@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+def get_symmetric(chars, i, j)
+  if chars[i-j..i] == chars[i..i+j].reverse
+    get_symmetric(chars, i, j+1)
+  else
+    chars[i-(j-1)..i+j-1]
+  end
+end
+
+def find(text)
+  symmetries = []
+  text.chars.each_with_index do |char, i|
+    if text[i - 1] == text[i + 1]
+      symmetries.push get_symmetric(text, i, 0)    
+    end
+  end  
+  symmetries
+end
+
+puts find(ARGV[0])
